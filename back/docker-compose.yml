@@ -9,8 +9,8 @@ services:
       - '27018:27017'
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: secret123
-      MONGO_INITDB_DATABASE: mydatabase
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: chat_online
     volumes:
       - mongo_data_alpine:/data/db
 
