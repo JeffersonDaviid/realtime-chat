@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Home route
 app.get('/', (_req: Request, res: Response) => {
-	res.send('Welcome to the Express Node.js app!');
+	res.send('Welcome Jeff to the Express Node.js app!');
 });
 
 app.use('/api/auth', loginRoute);
@@ -19,7 +19,7 @@ app.use('/api/auth', loginRoute);
 
 mongoose.set('strictQuery', false);
 mongoose
-	.connect('mongodb://localhost:27018/citas-medicas', {})
+	.connect('mongodb://localhost:27018/chat_online', {})
 	.then(() => {
 		console.log('Conectado a la base de datos');
 		app.listen(PORT, () => {
