@@ -36,8 +36,28 @@ Incrementar en un 10 % la tasa de conversión de visitantes a clientes potencial
 1. Implementar formulario para solicitar atención al cliente (**2h**)
 2. Configurar endpoint para la conexión con el front (**1h**)
 3. Implementar lógica para la persistencia de la conversación (**3h**)
----
+--- 
 
+**Número:** HU02  
+**Título:** Iniciar conversación  
+**Estimación:** 6h
+
+**Historia de usuario:**  
+- **Como** usuario,  
+- **Quiero** iniciar una conversación,  
+- **Para** informar que necesito más información.
+
+**Criterios de aceptación:**  
+**Escenario 1: Solicitud exitosa**  
+- **Dado** que estoy en el formulario **para** iniciar una conversación  
+- **Cuando** escribo mi duda y presiono enviar  
+- **Entonces** se abre un modal de conversación  
+
+**Tareas:**  
+1. Implementar formulario para solicitar atención al cliente (**2h**)
+2. Configurar endpoint para la conexión con el front (**1h**)
+3. Implementar lógica para la persistencia de la conversación (**3h**)
+---
 
 
 
