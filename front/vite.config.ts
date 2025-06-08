@@ -1,11 +1,8 @@
-import { reactRouter } from '@react-router/dev/vite';
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 
+// https://vite.dev/config/
 export default defineConfig({
-	plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-	server: {
-		// allowedHosts: ['.ngrok-free.app'], // Solo para desarrollo - Multi-User
-	},
+	plugins: [react(), tailwindcss()],
 });
