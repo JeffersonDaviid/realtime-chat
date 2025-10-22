@@ -1,0 +1,14 @@
+main {
+  display: flex;
+  gap: 1rem;
+}
+
+aside {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+.chat-area {
+  flex: 1;
+  /* background-color: red; */
+}

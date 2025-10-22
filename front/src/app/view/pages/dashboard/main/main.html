@@ -1,0 +1,40 @@
+<main>
+  <aside aria-label="Barra lateral de comunidades" role="complementary">
+    <header>
+      <h1>ChatHub</h1>
+    </header>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a routerLink="communities">Comunidades</a></li>
+      </ul>
+    </nav>
+
+    <section aria-labelledby="mis-comunidades">
+      <h2 id="mis-comunidades">Mis comunidades</h2>
+      <ul>
+        <li><a routerLink="chat"># angular-tips</a></li>
+        <li><a routerLink="chat"># web-development</a></li>
+        <li><a routerLink="chat"># clean-code</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="todas-comunidades">
+      <h2 id="todas-comunidades">Comunidades</h2>
+      <ul>
+        <li><a routerLink="chat"># python-hacks</a></li>
+        <li><a routerLink="chat"># security-school</a></li>
+      </ul>
+    </section>
+
+    <nav aria-label="Cuenta">
+      <ul>
+        <li><a routerLink="/">Salir</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="chat-area" aria-label="Área principal de chat">
+    <router-outlet />
+  </section>
+</main>

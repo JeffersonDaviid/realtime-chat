@@ -1,1 +1,43 @@
-<p>user-register works!</p>
+<app-navbar />
+
+<h1> ChatHub </h1>
+<p>Ingresa hoy a nuestra comunidad</p>
+
+<form [formGroup]="formRegister" (ngSubmit)="enviar()">
+
+  <label for="cedula">Cédula</label>
+  <input id="cedula" type="text" formControlName="cedula">
+  @if (hasErrors("cedula", "required")) {<span>La cédula es requerida</span>}
+  @if (hasErrors("cedula", "pattern")) {<span>La cédula no es válida</span>}
+
+  <label for="nombre">Nombre</label>
+  <input id="nombre" type="text" formControlName="nombre">
+  @if (hasErrors("nombre", "required")) {<span>El nombre es requerido</span>}
+  @if (hasErrors("nombre", "minlength")) {<span>El nombre no es válido</span>}
+
+  <label for="apellido">Apellido</label>
+  <input id="apellido" type="text" formControlName="apellido">
+  @if (hasErrors("apellido", "required")) {<span>El apellido es requerido</span>}
+  @if (hasErrors("apellido", "minlength")) {<span>El apellido no es válido</span>}
+
+  <label for="correo">Correo</label>
+  <input id="correo" type="email" formControlName="correo">
+  @if (hasErrors("correo", "required")) {<span>El correo es requerido</span>}
+  @if (hasErrors("correo", "email")) {<span>El correo no es válido</span>}
+
+  <label for="contrasena">Contraseña</label>
+  <input id="contrasena" type="password" formControlName="contrasena">
+  @if (hasErrors("contrasena", "required")) {<span> La contraseña es requerida</span>}
+  @if (hasErrors("contrasena", "minlength")) {<span>La contraseña no es válida</span>}
+
+  <label for="confirmContrasena">Confirma contraseña</label>
+  <input id="confirmContrasena" type="password" formControlName="confirmContrasena">
+  @if (hasErrors("confirmContrasena", "passwordsMismatch")) {<span>Las contraseñas no coinciden</span>}
+
+  <label for="direccion">Direccion</label>
+  <input id="direccion" type="text" formControlName="direccion">
+  @if (hasErrors("direccion", "required")) {<span>La dirección es requerida</span>}
+
+  <button type="submit"> Registrarme </button>
+
+</form>

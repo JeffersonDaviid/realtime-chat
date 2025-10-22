@@ -1,1 +1,19 @@
-<p>user-login works!</p>
+<app-navbar />
+
+<h1> ChatHub </h1>
+<p>Hola de nuevo!</p>
+
+<form [formGroup]="formLogin" (ngSubmit)="enviar()">
+
+  <label for="correo">Correo</label>
+  <input id="correo" type="email" formControlName="correo">
+  @if (hasErrors("correo", "required")) {<span>El correo es requerido</span>}
+  @if (hasErrors("correo", "email")) {<span>El correo no es válido</span>}
+
+  <label for="contrasena">Contraseña</label>
+  <input id="contrasena" type="password" formControlName="contrasena">
+  @if (hasErrors("contrasena", "required")) {<span> La contraseña es requerida</span>}
+
+
+  <button type="submit"> Ingresar </button>
+</form>
