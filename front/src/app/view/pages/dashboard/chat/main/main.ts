@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderChat } from '../header/header';
 import { InputMessage } from '../input-message/input-message';
 import { ChatMessage } from '../message/message';
+import { ChatService } from '@model/services/chat-service';
 
 @Component({
   selector: 'app-main',
@@ -9,4 +10,11 @@ import { ChatMessage } from '../message/message';
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
-export class MainChat {}
+export class MainChat {
+  protected chatService = inject(ChatService);
+
+  receiveMessage($event: string) {
+    console.log('El mensaje fue', $event);
+    this.chatService.addMessage($event);
+  }
+}

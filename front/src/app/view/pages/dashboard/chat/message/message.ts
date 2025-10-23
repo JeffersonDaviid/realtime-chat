@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Message } from '@model/entity/Message';
 
 @Component({
   selector: 'chat-message',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './message.html',
   styleUrl: './message.css',
 })
-export class ChatMessage {}
+export class ChatMessage {
+  message = input<Message>();
+}

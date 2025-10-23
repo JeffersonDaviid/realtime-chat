@@ -1,10 +1,9 @@
-<chat-header />
+<chat-header [community]="chatService.getCommunity()" />
+
 <section>
-  <chat-message />
-  <chat-message />
-  <chat-message />
-  <chat-message />
-  <chat-message />
+  @for (msj of chatService.getCommunity()?.messages; track $index) {
+  <chat-message [message]="msj" />
+  }
 </section>
 
-<chat-input-message />
+<chat-input-message (message)="receiveMessage($event)" />

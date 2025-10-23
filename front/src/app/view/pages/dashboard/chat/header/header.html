@@ -1,5 +1,6 @@
 <header>
-  <h2> Angular tips </h2>
-  <span>35 miembros conectados</span>
+  <h2> {{community()?.name}} </h2>
+  <p>{{community()?.description}}</p>
+  <span>{{community()?.members?.length}} miembros conectados</span>
   <button>Salir de la comunidad</button>
 </header>
