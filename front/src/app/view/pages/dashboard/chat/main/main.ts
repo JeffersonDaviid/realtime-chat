@@ -13,6 +13,10 @@ import { ChatService } from '@model/services/chat-service';
 export class MainChat {
   protected chatService = inject(ChatService);
 
+  getMemberName(idOwner: string) {
+    return this.chatService.getCommunity()?.members.find((m) => m.id === idOwner)?.name || '';
+  }
+
   receiveMessage($event: string) {
     console.log('El mensaje fue', $event);
     this.chatService.addMessage($event);

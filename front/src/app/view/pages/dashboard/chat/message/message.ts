@@ -9,4 +9,5 @@ import { Message } from '@model/entity/Message';
 })
 export class ChatMessage {
   message = input<Message>();
+  ownerName = input<string>();
 }

@@ -1,8 +1,8 @@
 <chat-header [community]="chatService.getCommunity()" />
 
 <section>
-  @for (msj of chatService.getCommunity()?.messages; track $index) {
-  <chat-message [message]="msj" />
+  @for (msj of chatService.getCommunity()?.messages; track msj.id; let i = $index) {
+  <chat-message [message]="msj" [ownerName]="getMemberName(msj.idOwner)" />
   }
 </section>
 

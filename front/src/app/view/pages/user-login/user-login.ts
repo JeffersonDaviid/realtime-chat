@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Navbar } from '@component/navbar/navbar';
+import { AuthService } from '@model/services/auth-service';
 
 @Component({
   selector: 'app-user-login',
@@ -10,6 +11,7 @@ import { Navbar } from '@component/navbar/navbar';
   styleUrl: './user-login.css',
 })
 export class UserLogin {
+  private _authService = inject(AuthService);
   private _router = inject(Router);
   private _formBuilder = inject(FormBuilder);
 
@@ -34,9 +36,13 @@ export class UserLogin {
 
     if (this.formLogin.invalid) return;
 
-    console.log('Ingresaste');
+    const email = this.formLogin.get('correo')?.value;
+    const pass = this.formLogin.get('contrasena')?.value;
 
-    // ensure you inject Router in the class: private _router = inject(Router);
+    this._authService.login(email, pass);
+
+    console.log(`Ingresaste con email: ${email} y pass: ${pass}`);
+
     this._router.navigate(['/dashboard/communities']);
   }
 }
